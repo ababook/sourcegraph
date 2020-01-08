@@ -102,6 +102,24 @@ export class DumpManager {
     }
 
     /**
+     * Return a map from upload ids to their state.
+     *
+     * @param ids The upload ids to fetch.
+     */
+    public async getUploadStates(ids: pgModels.DumpId[]): Promise<Map<pgModels.DumpId, pgModels.LsifUploadState>> {
+        const result = await instrumentQuery(() =>
+            this.connection
+                .getRepository(pgModels.LsifUpload)
+                .createQueryBuilder()
+                .select(['id', 'state'])
+                .where('id IN (:...ids)', { ids })
+                .getMany()
+        )
+
+        return new Map<pgModels.DumpId, pgModels.LsifUploadState>(result.map(u => [u.id, u.state]))
+    }
+
+    /**
      * Find the visible dumps. This method is used for testing.
      *
      * @param repository The repository.
@@ -119,14 +137,10 @@ export class DumpManager {
 
     /**
      * Get the oldest dump that is not visible at the tip of its repository.
-     *
-     * @param entityManager The EntityManager to use as part of a transaction.
      */
-    public getOldestPrunableDump(
-        entityManager: EntityManager = this.connection.createEntityManager()
-    ): Promise<pgModels.LsifDump | undefined> {
+    public getOldestPrunableDump(): Promise<pgModels.LsifDump | undefined> {
         return instrumentQuery(() =>
-            entityManager
+            this.connection
                 .getRepository(pgModels.LsifDump)
                 .createQueryBuilder()
                 .select()
