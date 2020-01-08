@@ -1848,7 +1848,7 @@ type Repository implements Node & GenericSearchResultInterface {
         query: String
 
         # The state of returned uploads.
-        state: LSIFUploadState!
+        state: LSIFUploadState
 
         # When specified, shows only uploads that are latest for the given repository.
         isLatestForRepo: Boolean
