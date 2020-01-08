@@ -63,7 +63,7 @@ export const validateQuery = validateOptionalString('query')
 /**
  * Create a query string validator for an LSIF upload state.
  *
- * @param key The query strin gkey.
+ * @param key The query string key.
  */
 export const validateLsifUploadState = query('state')
     .optional()
