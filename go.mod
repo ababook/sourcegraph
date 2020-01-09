@@ -31,7 +31,7 @@ require (
 	github.com/dhui/dktest v0.3.1 // indirect
 	github.com/dnaeon/go-vcr v1.0.1
 	github.com/docker/distribution v2.7.1+incompatible // indirect
-	github.com/docker/docker v0.7.3-0.20190817195342-4760db040282
+	github.com/docker/docker v1.13.1
 	github.com/docker/go-units v0.4.0 // indirect
 	github.com/emersion/go-imap v1.0.2
 	github.com/emersion/go-sasl v0.0.0-20191210011802-430746ea8b9b // indirect
@@ -70,8 +70,8 @@ require (
 	github.com/gomodule/oauth1 v0.0.0-20181215000758-9a59ed3b0a84
 	github.com/gomodule/redigo v2.0.0+incompatible
 	github.com/google/go-cmp v0.3.1
-	github.com/google/go-github v17.0.0+incompatible
-	github.com/google/go-github/v28 v28.1.1
+	github.com/google/go-github/v29 v29.0.1
+	github.com/google/go-github/v28/v29 v29.0.1
 	github.com/google/go-querystring v1.0.0
 	github.com/google/uuid v1.1.1
 	github.com/google/zoekt v0.0.0-20191211192039-0b109d08df69
@@ -121,7 +121,7 @@ require (
 	github.com/opentracing-contrib/go-stdlib v0.0.0-20190519235532-cf7a6c988dc9
 	github.com/opentracing/opentracing-go v1.1.0
 	github.com/pelletier/go-toml v1.6.0 // indirect
-	github.com/peterbourgon/ff v1.6.1-0.20190916204019-6cd704ec2eeb
+	github.com/peterbourgon/ff/v2/v2 v2.0.0
 	github.com/peterh/liner v1.1.0 // indirect
 	github.com/peterhellberg/link v1.1.0
 	github.com/pkg/errors v0.8.1
@@ -211,8 +211,8 @@ replace (
 	github.com/uber/gonduit => github.com/sourcegraph/gonduit v0.4.0
 )
 
-replace github.com/russross/blackfriday => github.com/russross/blackfriday v1.5.2
+replace github.com/russross/blackfriday/v2 => /v2github.com/russross/blackfriday v2.0.1
 
-replace github.com/dghubble/gologin => github.com/sourcegraph/gologin v1.0.2-0.20181110030308-c6f1b62954d8
+replace github.com/dghubble/gologin => /v2github.com/sourcegraph/gologin/v2 v2.0.0
 
 replace github.com/golang/lint => golang.org/x/lint v0.0.0-20191125180803-fdd1cda4f05f
